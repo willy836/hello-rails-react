@@ -1,10 +1,9 @@
 import React from "react";
-
+import Greeting from "./Greeting";
 const App = () => {
-  console.log("hello");
   return (
     <main>
-      <h1>App component</h1>
+      <Greeting />
     </main>
   );
 };
