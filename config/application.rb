@@ -8,6 +8,13 @@ Bundler.require(*Rails.groups)
 
 module HelloRailsReact
   class Application < Rails::Application
+    # Allow requests from any origin
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      end
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
