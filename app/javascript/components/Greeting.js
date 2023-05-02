@@ -17,7 +17,7 @@ const Greeting = () => {
   if (loading) {
     return <p>Loading...</p>;
   } else {
-    return <p>{greeting}</p>;
+    return <p>{greeting.message}</p>;
   }
 };
 

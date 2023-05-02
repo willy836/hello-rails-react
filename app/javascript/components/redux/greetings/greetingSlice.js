@@ -25,7 +25,11 @@ export const greetingSlice = createSlice({
       return newState;
     });
     builder.addCase(fetchGreeting.fulfilled, (state, action) => {
-      const newState = { ...state, loading: false, greeting: action.payload };
+      const newState = {
+        ...state,
+        loading: false,
+        greeting: action.payload[0],
+      };
       return newState;
     });
     builder.addCase(fetchGreeting.rejected, (state) => {
